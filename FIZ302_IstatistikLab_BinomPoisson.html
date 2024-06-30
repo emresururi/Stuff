@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Binom Dağılımı &#8212; EST&#39;s Stuff...</title>
+    <title>Binom ve Poisson Dağılımları &#8212; EST&#39;s Stuff...</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -103,7 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Binom Dağılımı
+   Binom ve Poisson Dağılımları
   </a>
  </li>
 </ul>
@@ -197,51 +197,47 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binom-dagilimi">
    Binom Dağılımı
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#poisson-dagilimi">
-     Poisson Dağılımı
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#poisson-dagilimi">
+   Poisson Dağılımı
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deney">
+   Deney
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cizelge-1-olasilik-dagilimi-deneyi">
+     Çizelge 1 (Olasılık Dağılımı Deneyi)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deney">
-     Deney
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cizelge-2a-olasilik-dagilimi-deneyi">
+     Çizelge 2A (Olasılık Dağılımı Deneyi)
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#cizelge-1-olasilik-dagilimi-deneyi">
-       Çizelge 1 (Olasılık Dağılımı Deneyi)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#cizelge-2a-olasilik-dagilimi-deneyi">
-       Çizelge 2A (Olasılık Dağılımı Deneyi)
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Deney
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi">
      Sonuçların binom dağılımına göre karşılaştırılması
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#rakamli-gruplar">
-       9 rakamlı gruplar
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rakamli-gruplar">
+     9 rakamlı gruplar
+    </a>
    </li>
   </ul>
  </li>
@@ -255,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Binom Dağılımı</h1>
+                <h1>Binom ve Poisson Dağılımları</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -265,51 +261,47 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binom-dagilimi">
    Binom Dağılımı
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#poisson-dagilimi">
-     Poisson Dağılımı
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#poisson-dagilimi">
+   Poisson Dağılımı
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deney">
+   Deney
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cizelge-1-olasilik-dagilimi-deneyi">
+     Çizelge 1 (Olasılık Dağılımı Deneyi)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deney">
-     Deney
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cizelge-2a-olasilik-dagilimi-deneyi">
+     Çizelge 2A (Olasılık Dağılımı Deneyi)
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#cizelge-1-olasilik-dagilimi-deneyi">
-       Çizelge 1 (Olasılık Dağılımı Deneyi)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#cizelge-2a-olasilik-dagilimi-deneyi">
-       Çizelge 2A (Olasılık Dağılımı Deneyi)
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Deney
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi">
      Sonuçların binom dağılımına göre karşılaştırılması
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#rakamli-gruplar">
-       9 rakamlı gruplar
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rakamli-gruplar">
+     9 rakamlı gruplar
+    </a>
    </li>
   </ul>
  </li>
@@ -322,7 +314,14 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="binom-ve-poisson-dagilimlari">
+<h1>Binom ve Poisson Dağılımları<a class="headerlink" href="#binom-ve-poisson-dagilimlari" title="Permalink to this headline">¶</a></h1>
+<p>FİZ302 - İstatistik Fizik Lab IV “Binom ve Poisson Dağılımları” deneyinin simülasyonu.</p>
+<p>Dr. Emre S. Taşcı, <a class="reference external" href="mailto:emre&#46;tasci&#37;&#52;&#48;hacettepe&#46;edu&#46;tr">emre<span>&#46;</span>tasci<span>&#64;</span>hacettepe<span>&#46;</span>edu<span>&#46;</span>tr</a><br />
+Fizik Mühendisliği Bölümü<br />
+Hacettepe Üniversitesi</p>
+<p>Haziran 2024</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
@@ -332,8 +331,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="binom-dagilimi">
-<h1>Binom Dağılımı<a class="headerlink" href="#binom-dagilimi" title="Permalink to this headline">¶</a></h1>
+<section id="binom-dagilimi">
+<h2>Binom Dağılımı<a class="headerlink" href="#binom-dagilimi" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}P_{N,p} = p^n q^{N-n}\begin{bmatrix}N\\n\end{bmatrix}=p^n q^{N-n}\frac{N!}{(N-n)!n!}\end{split}\]</div>
 <blockquote>
@@ -359,6 +358,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\begin{split}\bar n = Np\\
 \sigma^2 = Npq\end{split}\]</div>
+</section>
 <section id="poisson-dagilimi">
 <h2>Poisson Dağılımı<a class="headerlink" href="#poisson-dagilimi" title="Permalink to this headline">¶</a></h2>
 <p><span class="math notranslate nohighlight">\(a = Np\)</span> ve <span class="math notranslate nohighlight">\(N\gg\)</span> ile <span class="math notranslate nohighlight">\(p\ll\)</span> olmak üzere:</p>
@@ -548,14 +548,13 @@ Varyans : 8.5666 (formul)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/FIZ302_IstatistikLab_BinomPoisson_15_0.png" src="_images/FIZ302_IstatistikLab_BinomPoisson_15_0.png" />
+<img alt="_images/FIZ302_IstatistikLab_BinomPoisson_16_0.png" src="_images/FIZ302_IstatistikLab_BinomPoisson_16_0.png" />
 </div>
 </div>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Deney<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<section id="id1">
+<h2>Deney<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="simple">
 <li><p>Deney 4 için hazırlanan gelişigüzel sayılar çizelgesi binom ve Poisson dağılımları için
@@ -627,7 +626,7 @@ Toplam sayı adedi: 120
 </div>
 </div>
 <section id="sonuclarin-binom-dagilimina-gore-karsilastirilmasi">
-<h2>Sonuçların binom dağılımına göre karşılaştırılması<a class="headerlink" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi" title="Permalink to this headline">¶</a></h2>
+<h3>Sonuçların binom dağılımına göre karşılaştırılması<a class="headerlink" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi" title="Permalink to this headline">¶</a></h3>
 <p>Binom dağılımına göre karşılaştırırken sormamız gereken soru:</p>
 <p>“Rastgele 3 rakam çekilirse, bunların <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\((n=0,1,2,3)\)</span> tanesinin 7 olma olasılığı nedir?”</p>
 <p>şeklindedir.</p>
@@ -655,6 +654,7 @@ Rastgele çekilen 3 rakamdan 3 tanesinin 7 olma ihtimali: 0.00100
 </div>
 </div>
 </div>
+</section>
 <section id="rakamli-gruplar">
 <h3>9 rakamlı gruplar<a class="headerlink" href="#rakamli-gruplar" title="Permalink to this headline">¶</a></h3>
 <blockquote>
@@ -1508,7 +1508,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/FIZ302_IstatistikLab_BinomPoisson_38_0.png" src="_images/FIZ302_IstatistikLab_BinomPoisson_38_0.png" />
+<img alt="_images/FIZ302_IstatistikLab_BinomPoisson_39_0.png" src="_images/FIZ302_IstatistikLab_BinomPoisson_39_0.png" />
 </div>
 </div>
 </section>
