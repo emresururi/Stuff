@@ -1,0 +1,1588 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Binom Dağılımı &#8212; My sample book</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Stuff…" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Stuff…
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Binom Dağılımı
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/FIZ302_IstatistikLab_BinomPoisson.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/FIZ302_IstatistikLab_BinomPoisson.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FFIZ302_IstatistikLab_BinomPoisson.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/FIZ302_IstatistikLab_BinomPoisson.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Binom Dağılımı
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#poisson-dagilimi">
+     Poisson Dağılımı
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deney">
+     Deney
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cizelge-1-olasilik-dagilimi-deneyi">
+       Çizelge 1 (Olasılık Dağılımı Deneyi)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cizelge-2a-olasilik-dagilimi-deneyi">
+       Çizelge 2A (Olasılık Dağılımı Deneyi)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Deney
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi">
+     Sonuçların binom dağılımına göre karşılaştırılması
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rakamli-gruplar">
+       9 rakamlı gruplar
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Binom Dağılımı</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Binom Dağılımı
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#poisson-dagilimi">
+     Poisson Dağılımı
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deney">
+     Deney
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cizelge-1-olasilik-dagilimi-deneyi">
+       Çizelge 1 (Olasılık Dağılımı Deneyi)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cizelge-2a-olasilik-dagilimi-deneyi">
+       Çizelge 2A (Olasılık Dağılımı Deneyi)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Deney
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi">
+     Sonuçların binom dağılımına göre karşılaştırılması
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rakamli-gruplar">
+       9 rakamlı gruplar
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="binom-dagilimi">
+<h1>Binom Dağılımı<a class="headerlink" href="#binom-dagilimi" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_{N,p} = p^n q^{N-n}\begin{bmatrix}N\\n\end{bmatrix}=p^n q^{N-n}\frac{N!}{(N-n)!n!}\end{split}\]</div>
+<blockquote>
+<div><p>Genelleştirilmiş olasılık formülünün basit bir uygulaması olarak birkaç tane yirmi yüzlü <em>(0’dan 9’a her rakamın iki kere yer aldığı)</em> zarın atıldığını düşünelim: Örneğin böyle 3 zarı attığımız zaman, iki 7 elde etme olasılığı nedir? Her ayrı olay için p olasılığı 1/10, N = 3 ve n = 2’dir. Buna göre olasılık 0.027’dir.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">special</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.027000000000000007
+</pre></div>
+</div>
+</div>
+</div>
+<p>Binom dağılımda:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar n = Np\\
+\sigma^2 = Npq\end{split}\]</div>
+<section id="poisson-dagilimi">
+<h2>Poisson Dağılımı<a class="headerlink" href="#poisson-dagilimi" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(a = Np\)</span> ve <span class="math notranslate nohighlight">\(N\gg\)</span> ile <span class="math notranslate nohighlight">\(p\ll\)</span> olmak üzere:</p>
+<div class="math notranslate nohighlight">
+\[P_a(n) = \frac{a^ne^{-a}}{n!}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\bar n = a\\
+\sigma^2 = a\end{split}\]</div>
+</section>
+<section id="deney">
+<h2>Deney<a class="headerlink" href="#deney" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Yirmi yüzlü üç zardan elde edilen sayıları Çizelge 1 ‘e geçirerek 360 rakamlı bir gelişigüzel sayılar çizelgesi kurun.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_satir</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">n_sutun</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">n_satir</span> <span class="o">*</span> <span class="n">n_sutun</span>
+<span class="n">rakamlar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="n">n_satir</span><span class="p">,</span><span class="n">n_sutun</span><span class="p">))</span>
+<span class="n">rakamlar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 5, 5, 6, 3, 8, 1, 3, 2, 7, 4, 2, 1, 3, 7, 5, 8, 0, 5, 7, 2, 2,
+        4, 4],
+       [3, 5, 8, 6, 0, 3, 8, 0, 3, 7, 3, 8, 5, 7, 8, 9, 2, 8, 6, 3, 7, 0,
+        7, 5],
+       [1, 2, 0, 9, 8, 3, 9, 5, 7, 1, 5, 1, 3, 8, 2, 3, 9, 9, 3, 2, 6, 6,
+        7, 9],
+       [5, 6, 6, 2, 0, 0, 4, 7, 0, 9, 5, 4, 7, 3, 7, 3, 4, 7, 3, 6, 5, 7,
+        8, 6],
+       [1, 7, 8, 7, 4, 3, 4, 0, 5, 8, 2, 0, 6, 2, 0, 9, 7, 3, 4, 3, 9, 3,
+        0, 3],
+       [0, 1, 6, 1, 5, 8, 3, 5, 4, 7, 8, 4, 8, 8, 7, 1, 2, 8, 1, 9, 6, 4,
+        5, 0],
+       [7, 8, 2, 4, 1, 0, 5, 7, 1, 8, 4, 3, 2, 6, 0, 5, 6, 2, 3, 5, 3, 4,
+        6, 2],
+       [5, 0, 2, 5, 7, 8, 5, 6, 5, 7, 1, 7, 0, 2, 3, 2, 9, 5, 9, 3, 6, 3,
+        9, 8],
+       [7, 6, 9, 5, 6, 6, 0, 3, 4, 2, 4, 1, 0, 3, 9, 5, 2, 5, 0, 7, 0, 1,
+        8, 0],
+       [4, 5, 2, 8, 6, 9, 3, 6, 9, 5, 9, 8, 2, 9, 1, 3, 2, 9, 6, 8, 2, 2,
+        6, 9],
+       [6, 6, 2, 2, 0, 4, 0, 7, 6, 4, 9, 0, 7, 5, 8, 5, 2, 6, 8, 8, 5, 1,
+        2, 1],
+       [4, 0, 6, 9, 5, 5, 4, 8, 4, 4, 2, 3, 8, 5, 7, 2, 1, 7, 8, 9, 8, 9,
+        6, 8],
+       [9, 0, 0, 2, 2, 8, 6, 1, 7, 0, 2, 9, 0, 5, 5, 0, 3, 1, 2, 6, 3, 5,
+        2, 4],
+       [9, 0, 1, 1, 6, 2, 6, 3, 1, 7, 8, 9, 2, 7, 7, 8, 4, 2, 3, 4, 0, 1,
+        6, 6],
+       [3, 8, 6, 1, 6, 8, 8, 7, 1, 8, 0, 1, 6, 6, 6, 8, 0, 6, 2, 5, 2, 0,
+        4, 3]])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cizelge-1-olasilik-dagilimi-deneyi">
+<h3>Çizelge 1 (Olasılık Dağılımı Deneyi)<a class="headerlink" href="#cizelge-1-olasilik-dagilimi-deneyi" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_satir</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;| &quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_sutun</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rakamlar</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">((</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">3</span>==0):
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">3</span> == 0):
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="p">(</span><span class="n">n_sutun</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="nb">int</span><span class="p">)(</span><span class="n">n_sutun</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 1 5 5 | 6 3 8 | 1 3 2 | 7 4 2 | 1 3 7 | 5 8 0 | 5 7 2 | 2 4 4 | 
+| 3 5 8 | 6 0 3 | 8 0 3 | 7 3 8 | 5 7 8 | 9 2 8 | 6 3 7 | 0 7 5 | 
+| 1 2 0 | 9 8 3 | 9 5 7 | 1 5 1 | 3 8 2 | 3 9 9 | 3 2 6 | 6 7 9 | 
+-----------------------------------------------------------------
+| 5 6 6 | 2 0 0 | 4 7 0 | 9 5 4 | 7 3 7 | 3 4 7 | 3 6 5 | 7 8 6 | 
+| 1 7 8 | 7 4 3 | 4 0 5 | 8 2 0 | 6 2 0 | 9 7 3 | 4 3 9 | 3 0 3 | 
+| 0 1 6 | 1 5 8 | 3 5 4 | 7 8 4 | 8 8 7 | 1 2 8 | 1 9 6 | 4 5 0 | 
+-----------------------------------------------------------------
+| 7 8 2 | 4 1 0 | 5 7 1 | 8 4 3 | 2 6 0 | 5 6 2 | 3 5 3 | 4 6 2 | 
+| 5 0 2 | 5 7 8 | 5 6 5 | 7 1 7 | 0 2 3 | 2 9 5 | 9 3 6 | 3 9 8 | 
+| 7 6 9 | 5 6 6 | 0 3 4 | 2 4 1 | 0 3 9 | 5 2 5 | 0 7 0 | 1 8 0 | 
+-----------------------------------------------------------------
+| 4 5 2 | 8 6 9 | 3 6 9 | 5 9 8 | 2 9 1 | 3 2 9 | 6 8 2 | 2 6 9 | 
+| 6 6 2 | 2 0 4 | 0 7 6 | 4 9 0 | 7 5 8 | 5 2 6 | 8 8 5 | 1 2 1 | 
+| 4 0 6 | 9 5 5 | 4 8 4 | 4 2 3 | 8 5 7 | 2 1 7 | 8 9 8 | 9 6 8 | 
+-----------------------------------------------------------------
+| 9 0 0 | 2 2 8 | 6 1 7 | 0 2 9 | 0 5 5 | 0 3 1 | 2 6 3 | 5 2 4 | 
+| 9 0 1 | 1 6 2 | 6 3 1 | 7 8 9 | 2 7 7 | 8 4 2 | 3 4 0 | 1 6 6 | 
+| 3 8 6 | 1 6 8 | 8 7 1 | 8 0 1 | 6 6 6 | 8 0 6 | 2 5 2 | 0 4 3 | 
+-----------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cizelge-2a-olasilik-dagilimi-deneyi">
+<h3>Çizelge 2A (Olasılık Dağılımı Deneyi)<a class="headerlink" href="#cizelge-2a-olasilik-dagilimi-deneyi" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^6s}</span><span class="s2"> </span><span class="si">{:^8s}</span><span class="s2"> </span><span class="si">{:^10s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Sayı&quot;</span><span class="p">,</span><span class="s2">&quot;Frekans&quot;</span><span class="p">,</span><span class="s2">&quot;Olasılık&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">25</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">toplam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="n">rakamlar</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^6d}</span><span class="s2"> </span><span class="si">{:^8d}</span><span class="s2"> </span><span class="si">{:^10.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">toplam</span><span class="p">,</span><span class="n">toplam</span><span class="o">/</span><span class="p">(</span><span class="n">n_satir</span><span class="o">*</span><span class="n">n_sutun</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Sayı  Frekans   Olasılık 
+-------------------------
+  0       37     0.10278  
+  1       29     0.08056  
+  2       42     0.11667  
+  3       38     0.10556  
+  4       28     0.07778  
+  5       39     0.10833  
+  6       42     0.11667  
+  7       35     0.09722  
+  8       41     0.11389  
+  9       29     0.08056  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hazır fonksiyonlar kullanarak</span>
+<span class="n">ortalama</span> <span class="o">=</span> <span class="n">rakamlar</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">varyans</span> <span class="o">=</span> <span class="n">rakamlar</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ortalama: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ortalama</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varyans : </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">varyans</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ortalama: 4.5000
+Varyans : 7.9778
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Formül kullanarak</span>
+<span class="n">rakamlar_tum</span> <span class="o">=</span> <span class="n">rakamlar</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">toplam_aux</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n_i</span> <span class="ow">in</span> <span class="n">rakamlar_tum</span><span class="p">:</span>
+    <span class="n">toplam_aux</span> <span class="o">+=</span> <span class="n">n_i</span>
+<span class="n">ortalama_formul</span> <span class="o">=</span> <span class="n">toplam_aux</span> <span class="o">/</span> <span class="n">N</span>
+
+<span class="n">varyans_aux</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n_i</span> <span class="ow">in</span> <span class="n">rakamlar_tum</span><span class="p">:</span>
+    <span class="n">varyans_aux</span> <span class="o">+=</span> <span class="p">(</span><span class="n">n_i</span> <span class="o">-</span> <span class="n">ortalama_formul</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">varyans_formul</span> <span class="o">=</span> <span class="n">varyans_aux</span> <span class="o">/</span> <span class="n">N</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ortalama: </span><span class="si">{:.4f}</span><span class="s2"> (formul)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ortalama_formul</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Varyans : </span><span class="si">{:.4f}</span><span class="s2"> (formul)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">varyans_formul</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ortalama: 4.5000 (formul)
+Varyans : 7.9778 (formul)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rakamlar_tum</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># x değerleri tam ortada çıksın diye</span>
+                                        <span class="c1"># yarım birim sağa öteliyoruz</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Rakam&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frekans&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/FIZ302_IstatistikLab_BinomPoisson_15_0.png" src="_images/FIZ302_IstatistikLab_BinomPoisson_15_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Deney<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ol class="simple">
+<li><p>Deney 4 için hazırlanan gelişigüzel sayılar çizelgesi binom ve Poisson dağılımları için
+ilginç örnekler verir. Yirmi yüzlü zar ile elde edilen üç-rakamlı gelişigüzel sayıları alarak her üç gruptaki 7’lerin sayısı için bir frekans sayımı yapın. Yani, üç rakamlı sayılardan kaç tanesinde hiç 7 yoktur; bir tane 7, iki 7 veya üç 7 kaç tanesinde var? Sonuçlarınızı ana binom dağılımına göre beklediklerinizle karşılaştırın. Örnek ortalamasını ve variansı hesaplayıp ana binom dağılımındaki değerlerle karşılaştırın.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sayilar</span> <span class="o">=</span> <span class="n">rakamlar_tum</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="nb">int</span><span class="p">)(</span><span class="n">N</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sayilar</span><span class="p">[:</span><span class="mi">10</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 5, 5],
+       [6, 3, 8],
+       [1, 3, 2],
+       [7, 4, 2],
+       [1, 3, 7],
+       [5, 8, 0],
+       [5, 7, 2],
+       [2, 4, 4],
+       [3, 5, 8],
+       [6, 0, 3]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">sayi</span> <span class="o">=</span>  <span class="n">sayilar</span><span class="p">[</span><span class="mi">4</span><span class="p">,:]</span>
+<span class="n">sayi_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sayi</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:3s}</span><span class="s2"> sayısındaki </span><span class="si">{:d}</span><span class="s2"> adedi: </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sayi_str</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="n">sayi</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>137 sayısındaki 7 adedi: 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_toplam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sayilar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">sayi</span> <span class="o">=</span>  <span class="n">sayilar</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span>
+    <span class="n">k_toplam</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="n">sayi</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;İçinde </span><span class="si">{:d}</span><span class="s2"> tane </span><span class="si">{:d}</span><span class="s2"> olan sayı adedi: </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">k_toplam</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Olasılık: </span><span class="si">{:.5f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k_toplam</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">sayilar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Toplam sayı adedi: </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sayilar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>İçinde 0 tane 7 olan sayı adedi: 88	(Olasılık: 0.73333)
+İçinde 1 tane 7 olan sayı adedi: 29	(Olasılık: 0.24167)
+İçinde 2 tane 7 olan sayı adedi: 3	(Olasılık: 0.02500)
+İçinde 3 tane 7 olan sayı adedi: 0	(Olasılık: 0.00000)
+
+Toplam sayı adedi: 120
+</pre></div>
+</div>
+</div>
+</div>
+<section id="sonuclarin-binom-dagilimina-gore-karsilastirilmasi">
+<h2>Sonuçların binom dağılımına göre karşılaştırılması<a class="headerlink" href="#sonuclarin-binom-dagilimina-gore-karsilastirilmasi" title="Permalink to this headline">¶</a></h2>
+<p>Binom dağılımına göre karşılaştırırken sormamız gereken soru:</p>
+<p>“Rastgele 3 rakam çekilirse, bunların <span class="math notranslate nohighlight">\(n\)</span> <span class="math notranslate nohighlight">\((n=0,1,2,3)\)</span> tanesinin 7 olma olasılığı nedir?”</p>
+<p>şeklindedir.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">olasilik_n</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rastgele çekilen 3 rakamdan </span><span class="si">{:d}</span><span class="s2"> tanesinin </span><span class="si">{:d}</span><span class="s2"> olma ihtimali: </span><span class="si">{:.5f}</span><span class="s2">&quot;</span>\
+         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">olasilik_n</span><span class="p">))</span>
+    
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rastgele çekilen 3 rakamdan 0 tanesinin 7 olma ihtimali: 0.72900
+Rastgele çekilen 3 rakamdan 1 tanesinin 7 olma ihtimali: 0.24300
+Rastgele çekilen 3 rakamdan 2 tanesinin 7 olma ihtimali: 0.02700
+Rastgele çekilen 3 rakamdan 3 tanesinin 7 olma ihtimali: 0.00100
+</pre></div>
+</div>
+</div>
+</div>
+<section id="rakamli-gruplar">
+<h3>9 rakamlı gruplar<a class="headerlink" href="#rakamli-gruplar" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="simple">
+<li><p>Şimdi de gelişigüzel sayılar çizelgesindeki dokuz rakamlı grupları alalım. 9 rakamlı
+grupların her birindeki 7’lerin sayısı için frekans sayımı yapın; çizelgede böyle 40 grup bulunmaktadır. Sonuçlarınızı Çizelge 1’ e geçirin.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sayilar_9</span> <span class="o">=</span> <span class="n">rakamlar</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">sayilar_9</span><span class="p">[:</span><span class="mi">10</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 5, 5, 6, 3, 8, 1, 3, 2],
+       [7, 4, 2, 1, 3, 7, 5, 8, 0],
+       [5, 7, 2, 2, 4, 4, 3, 5, 8],
+       [6, 0, 3, 8, 0, 3, 7, 3, 8],
+       [5, 7, 8, 9, 2, 8, 6, 3, 7],
+       [0, 7, 5, 1, 2, 0, 9, 8, 3],
+       [9, 5, 7, 1, 5, 1, 3, 8, 2],
+       [3, 9, 9, 3, 2, 6, 6, 7, 9],
+       [5, 6, 6, 2, 0, 0, 4, 7, 0],
+       [9, 5, 4, 7, 3, 7, 3, 4, 7]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Her bir sayıyı oluşturan rakamlardan kaçar tane</span>
+<span class="c1"># olduğunu tutan çizelge</span>
+
+<span class="c1"># Örneğin cizelge_1_aux.loc[4,6]: 4 indisli sayıda kaç adet </span>
+<span class="c1"># 6 olduğunu vermekte</span>
+
+<span class="c1"># Benzer şekilde, cizelge_1_aux.loc[6,0]: 6 indisli sayıda </span>
+<span class="c1"># kaç adet 0 olduğunu vermekte</span>
+
+<span class="n">sayilar_9_adedi</span> <span class="o">=</span> <span class="n">sayilar_9</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">cizelge_1_aux_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">sayilar_9_adedi</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sayilar_9_adedi</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">rakam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">cizelge_1_aux_np</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">rakam</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">rakam</span><span class="o">==</span><span class="n">sayilar_9</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
+        
+<span class="n">cizelge_1_aux</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cizelge_1_aux_np</span><span class="p">)</span>
+<span class="n">cizelge_1_aux</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Sayı&quot;</span><span class="p">]</span>
+<span class="n">cizelge_1_aux</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">10</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+    <tr>
+      <th>Sayı</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bu da hangi rakamın bir sayıda kaç kere çıkmış</span>
+<span class="c1"># olduğunu tutan çizelge (Çizelge 1)</span>
+
+<span class="c1"># Örneğin cizelge_1.loc[4,6]: 4 rakamının kaç tane sayıda</span>
+<span class="c1"># 6 kere olduğunu vermekte;</span>
+
+<span class="c1"># Benzer şekilde, cizelge_1.loc[6,0]: 6 rakamını </span>
+<span class="c1"># hiç içermeyen kaç tane sayı olduğunu vermekte</span>
+
+<span class="n">cizelge_1_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rakam</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">rakamdan_n_tane_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cizelge_1_aux</span><span class="p">[</span><span class="n">rakam</span><span class="p">]</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">cizelge_1_np</span><span class="p">[</span><span class="n">rakam</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">rakamdan_n_tane_var</span>
+<span class="n">cizelge_1_np</span>
+
+<span class="n">cizelge_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cizelge_1_np</span><span class="p">)</span>
+<span class="n">cizelge_1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rakam&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Çizelge 1&#39;in sütunlarını föydeki gibi sıralayalım</span>
+<span class="c1"># (0 en sonda olacak şekilde)</span>
+<span class="n">cizelge_1</span> <span class="o">=</span> <span class="n">cizelge_1</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">cizelge_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>Rakam</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11</td>
+      <td>7</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21</td>
+      <td>9</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>19</td>
+      <td>8</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>11</td>
+      <td>7</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>19</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>16</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>17</td>
+      <td>6</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>20</td>
+      <td>6</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>13</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<blockquote>
+<div><p>Son olarak, olasılıkları elde etmek için bunları toplam ölçme sayısına bölün</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cizelge_1_olasiliklar</span> <span class="o">=</span> <span class="n">cizelge_1</span><span class="o">/</span><span class="mi">40</span>
+<span class="n">cizelge_1_olasiliklar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>0</th>
+    </tr>
+    <tr>
+      <th>Rakam</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.275</td>
+      <td>0.175</td>
+      <td>0.100</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.450</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.275</td>
+      <td>0.225</td>
+      <td>0.000</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.525</td>
+      <td>0.225</td>
+      <td>0.025</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.225</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.475</td>
+      <td>0.200</td>
+      <td>0.025</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.275</td>
+      <td>0.175</td>
+      <td>0.025</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.525</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.475</td>
+      <td>0.175</td>
+      <td>0.050</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.300</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.400</td>
+      <td>0.150</td>
+      <td>0.050</td>
+      <td>0.05</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.350</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.425</td>
+      <td>0.150</td>
+      <td>0.050</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.375</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.500</td>
+      <td>0.150</td>
+      <td>0.075</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.275</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.325</td>
+      <td>0.125</td>
+      <td>0.050</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Her rakamın olasılığı üzerinden</span>
+<span class="c1"># (yani sütunlar boyunca) ortalama</span>
+<span class="c1"># değerlerini alalım</span>
+<span class="n">cizelge_1_olasiliklar_ortalama</span> <span class="o">=</span> <span class="n">cizelge_1_olasiliklar</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">cizelge_1_olasiliklar_ortalama</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    0.395
+2    0.175
+3    0.045
+4    0.005
+5    0.000
+6    0.000
+7    0.000
+8    0.000
+9    0.000
+0    0.380
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Sonuçlarınızı <span class="math notranslate nohighlight">\(P_{N,1/10} (n)\)</span> binom dağılımı değerleriyle karşılaştırın.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">p</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seçilen bir rakamın 9 rakamlı bir sayıda:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">olasilik_n_binom</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="si">{:d}</span><span class="s2"> kere çıkma ihtimali: </span><span class="si">{:.9f}</span><span class="s2">&quot;</span>\
+         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">olasilik_n_binom</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Seçilen bir rakamın 9 rakamlı bir sayıda:
+
+	0 kere çıkma ihtimali: 0.387420489
+	1 kere çıkma ihtimali: 0.387420489
+	2 kere çıkma ihtimali: 0.172186884
+	3 kere çıkma ihtimali: 0.044641044
+	4 kere çıkma ihtimali: 0.007440174
+	5 kere çıkma ihtimali: 0.000826686
+	6 kere çıkma ihtimali: 0.000061236
+	7 kere çıkma ihtimali: 0.000002916
+	8 kere çıkma ihtimali: 0.000000081
+	9 kere çıkma ihtimali: 0.000000001
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Bu dağılımın değerlerini hesaplarken P(n+1)’i P(n) cinsinden veren bir geri götürme (özyineleme / <em>recurrence</em>) bağıntısı kullanmak fazla işlem yapmayı engeller.</p>
+<p>Binom dağlımı için uygun olan geri götürme bağıntısı (…) aşağıdaki bağıntıdır.</p>
+<div class="math notranslate nohighlight">
+\[P_{N,p}(N+1)=\frac{p(N-n)}{q(n+1)}P_{N,p}(n)\]</div>
+<p>Buna göre sadece <span class="math notranslate nohighlight">\(P_{N,p}(0)\)</span>’ı hesaplamak ve bu bağıntıyı kullanmak yeterlidir. Geri götürme bağıntısını kullanırken başta yapılan bir hata süregideceğinden genel olarak bu yol biraz sakıncalıdır. Bununla birlikte bu özel durumda artan n’ler için P’nin değerleri çok çabuk küçüldüğünden bir sakınca yoktur. Gerçekten, <span class="math notranslate nohighlight">\(n\gt4\)</span> için değerlerin <span class="math notranslate nohighlight">\(10^{-5}\)</span>’ten küçük olduğunu, böylece daha ileri gitmenin anlamsızlığını görmelisiniz.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">p</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seçilen bir rakamın 9 rakamlı bir sayıda n kere çıkma ihtimali:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^4s}</span><span class="s2"> </span><span class="si">{:^11s}</span><span class="s2"> | </span><span class="si">{:^11s}</span><span class="s2"> | </span><span class="si">{:^11s}</span><span class="s2">&quot;</span>\
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;Binom&quot;</span><span class="p">,</span><span class="s2">&quot;Özyineleme&quot;</span><span class="p">,</span><span class="s2">&quot;Örnek&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">44</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">olasilik_n_binom</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+<span class="n">P_Np_n</span> <span class="o">=</span> <span class="n">olasilik_n_binom</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^4d}</span><span class="s2"> </span><span class="si">{:.9f}</span><span class="s2"> | </span><span class="si">{:11s}</span><span class="s2"> | </span><span class="si">{:.9f}</span><span class="s2">&quot;</span>\
+         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">olasilik_n_binom</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">cizelge_1_olasiliklar_ortalama</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">olasilik_n_binom</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">olasilik_n_ozyineleme</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="p">((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">P_Np_n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^4d}</span><span class="s2"> </span><span class="si">{:.9f}</span><span class="s2"> | </span><span class="si">{:.9f}</span><span class="s2"> | </span><span class="si">{:.9f}</span><span class="s2">&quot;</span>\
+         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">olasilik_n_binom</span><span class="p">,</span><span class="n">olasilik_n_ozyineleme</span><span class="p">,</span>\
+                 <span class="n">cizelge_1_olasiliklar_ortalama</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span>
+    <span class="n">P_Np_n</span> <span class="o">=</span> <span class="n">olasilik_n_ozyineleme</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Seçilen bir rakamın 9 rakamlı bir sayıda n kere çıkma ihtimali:
+
+ n      Binom    | Özyineleme  |    Örnek   
+--------------------------------------------
+ 0   0.387420489 |             | 0.380000000
+ 1   0.387420489 | 0.387420489 | 0.395000000
+ 2   0.172186884 | 0.172186884 | 0.175000000
+ 3   0.044641044 | 0.044641044 | 0.045000000
+ 4   0.007440174 | 0.007440174 | 0.005000000
+ 5   0.000826686 | 0.000826686 | 0.000000000
+ 6   0.000061236 | 0.000061236 | 0.000000000
+ 7   0.000002916 | 0.000002916 | 0.000000000
+ 8   0.000000081 | 0.000000081 | 0.000000000
+ 9   0.000000001 | 0.000000001 | 0.000000000
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Şimdi 9 rakamlı gelişigüzel sayı gruplarındaki sayıların dağılımı için Poisson yaklaşıklığını ele alalım. <span class="math notranslate nohighlight">\(N = 9\)</span>, <span class="math notranslate nohighlight">\(p = 1/10\)</span> olup <span class="math notranslate nohighlight">\(a = Np = 0,9\)</span>’dur. Poisson dağılımını kullanarak <span class="math notranslate nohighlight">\(n\)</span>’nin 0’dan 9’a kadar olan değerleri için olasılıkları yeniden hesaplayın. Hiç kuşkusuz <span class="math notranslate nohighlight">\(N = 9\)</span>, <span class="math notranslate nohighlight">\(N = \infty\)</span>’dan çok uzak olduğundan kesin bir uyuşma beklememeliyiz, fakat yine de karşılaştırma ilgi çekicidir.</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">N</span><span class="o">*</span><span class="n">p</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">poisson</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">special</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">poisson</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.4065696597405991
+1 0.36591269376653923
+2 0.16466071219494266
+3 0.0493982136584828
+4 0.011114598073158628
+5 0.002000627653168553
+6 0.000300094147975283
+7 3.858353331110782e-05
+8 4.340647497499629e-06
+9 4.3406474974996295e-07
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">p</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Seçilen bir rakamın 9 rakamlı bir sayıda n kere çıkma ihtimali:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^4s}</span><span class="s2"> </span><span class="si">{:^11s}</span><span class="s2"> | </span><span class="si">{:^11s}</span><span class="s2"> | </span><span class="si">{:^11s}</span><span class="s2">&quot;</span>\
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;Binom&quot;</span><span class="p">,</span><span class="s2">&quot;Örnek&quot;</span><span class="p">,</span><span class="s2">&quot;Poisson&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">44</span><span class="p">)</span>
+
+<span class="n">dizi_binom</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">dizi_ornek</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">dizi_poisson</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">olasilik_n_binom</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="o">**</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">poisson</span> <span class="o">=</span> <span class="n">a</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">special</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^4d}</span><span class="s2"> </span><span class="si">{:.9f}</span><span class="s2"> | </span><span class="si">{:.9f}</span><span class="s2"> | </span><span class="si">{:.9f}</span><span class="s2">&quot;</span>\
+         <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">olasilik_n_binom</span><span class="p">,</span>\
+                 <span class="n">cizelge_1_olasiliklar_ortalama</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">poisson</span><span class="p">))</span>
+    <span class="n">dizi_binom</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">olasilik_n_binom</span><span class="p">)</span>
+    <span class="n">dizi_ornek</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cizelge_1_olasiliklar_ortalama</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">dizi_poisson</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">poisson</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Seçilen bir rakamın 9 rakamlı bir sayıda n kere çıkma ihtimali:
+
+ n      Binom    |    Örnek    |   Poisson  
+--------------------------------------------
+ 0   0.387420489 | 0.380000000 | 0.406569660
+ 1   0.387420489 | 0.395000000 | 0.365912694
+ 2   0.172186884 | 0.175000000 | 0.164660712
+ 3   0.044641044 | 0.045000000 | 0.049398214
+ 4   0.007440174 | 0.005000000 | 0.011114598
+ 5   0.000826686 | 0.000000000 | 0.002000628
+ 6   0.000061236 | 0.000000000 | 0.000300094
+ 7   0.000002916 | 0.000000000 | 0.000038584
+ 8   0.000000081 | 0.000000000 | 0.000004341
+ 9   0.000000001 | 0.000000000 | 0.000000434
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dizi_binom</span><span class="p">,</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dizi_ornek</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dizi_poisson</span><span class="p">,</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">markerfacecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Binom&quot;</span><span class="p">,</span><span class="s2">&quot;Örnek&quot;</span><span class="p">,</span><span class="s2">&quot;Poisson&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/FIZ302_IstatistikLab_BinomPoisson_38_0.png" src="_images/FIZ302_IstatistikLab_BinomPoisson_38_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Stuff…</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
