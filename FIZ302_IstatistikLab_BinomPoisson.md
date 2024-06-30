@@ -12,6 +12,16 @@ kernelspec:
   name: python3
 ---
 
+# Binom ve Poisson Dağılımları
+
+FİZ302 - İstatistik Fizik Lab IV "Binom ve Poisson Dağılımları" deneyinin simülasyonu.
+
+Dr. Emre S. Taşcı, emre.tasci@hacettepe.edu.tr  
+Fizik Mühendisliği Bölümü  
+Hacettepe Üniversitesi
+
+Haziran 2024
+
 ```{code-cell} ipython3
 import numpy as np
 from scipy import special
@@ -19,7 +29,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-# Binom Dağılımı
+## Binom Dağılımı
 
 $$P_{N,p} = p^n q^{N-n}\begin{bmatrix}N\\n\end{bmatrix}=p^n q^{N-n}\frac{N!}{(N-n)!n!}$$
 
@@ -129,7 +139,7 @@ plt.ylabel("Frekans")
 plt.show()
 ```
 
-# Deney
+## Deney
 
 >1. Deney 4 için hazırlanan gelişigüzel sayılar çizelgesi binom ve Poisson dağılımları için
 ilginç örnekler verir. Yirmi yüzlü zar ile elde edilen üç-rakamlı gelişigüzel sayıları alarak her üç gruptaki 7'lerin sayısı için bir frekans sayımı yapın. Yani, üç rakamlı sayılardan kaç tanesinde hiç 7 yoktur; bir tane 7, iki 7 veya üç 7 kaç tanesinde var? Sonuçlarınızı ana binom dağılımına göre beklediklerinizle karşılaştırın. Örnek ortalamasını ve variansı hesaplayıp ana binom dağılımındaki değerlerle karşılaştırın.
@@ -160,7 +170,7 @@ for i in range(4):
 print("\nToplam sayı adedi: {:d}".format(sayilar.shape[0]))
 ```
 
-## Sonuçların binom dağılımına göre karşılaştırılması
+### Sonuçların binom dağılımına göre karşılaştırılması
 
 Binom dağılımına göre karşılaştırırken sormamız gereken soru: 
 
