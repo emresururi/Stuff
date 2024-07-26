@@ -1,0 +1,1106 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Quantum Shell Game &#8212; EST&#39;s Stuff...</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Stress - Strain Tensors &amp; Elasticity" href="StrainStressTensors.html" />
+    <link rel="prev" title="Binom ve Poisson Dağılımları" href="FIZ302_IstatistikLab_BinomPoisson.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EST's Stuff...</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Stuff…
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="FIZ302_IstatistikLab_BinomPoisson.html">
+   Binom ve Poisson Dağılımları
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Quantum Shell Game
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="StrainStressTensors.html">
+   Stress-Strain Tensors &amp; Elasticity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/Quantum_Shell_Game.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Quantum_Shell_Game.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/emresururi/Stuff/main?urlpath=tree/Quantum_Shell_Game.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules-nomenclature">
+   Rules &amp; Nomenclature
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation-of-a-run-of-games">
+     Simulation of a run of games
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-game">
+   The Game
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurement">
+   Measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-actual-quantum-setup">
+   The “Actual” Quantum Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Simulation of a run of games
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-30-sup-o-sup-optimal">
+     Is 30
+     <sup>
+      o
+     </sup>
+     optimal?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-rules-strategy">
+   Alternative rules &amp; strategy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further Reading
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Quantum Shell Game</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules-nomenclature">
+   Rules &amp; Nomenclature
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation-of-a-run-of-games">
+     Simulation of a run of games
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-game">
+   The Game
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurement">
+   Measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-actual-quantum-setup">
+   The “Actual” Quantum Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Simulation of a run of games
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-30-sup-o-sup-optimal">
+     Is 30
+     <sup>
+      o
+     </sup>
+     optimal?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-rules-strategy">
+   Alternative rules &amp; strategy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further Reading
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-shell-game">
+<h1>Quantum Shell Game<a class="headerlink" href="#quantum-shell-game" title="Permalink to this headline">¶</a></h1>
+<p>Dr. Emre S. Tasci, <a class="reference external" href="mailto:emre&#46;tasci&#37;&#52;&#48;hacettepe&#46;edu&#46;tr">emre<span>&#46;</span>tasci<span>&#64;</span>hacettepe<span>&#46;</span>edu<span>&#46;</span>tr</a><br />
+Dept. Eng. Physics<br />
+Hacettepe University<br />
+Ankara / Turkey</p>
+<p>June 2024</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">opt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\ket}[1]{\left|{#1}\right\rangle}
+\newcommand{\bra}[1]{\left\langle{#1}\right|}
+\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}\]</div>
+<section id="rules-nomenclature">
+<h2>Rules &amp; Nomenclature<a class="headerlink" href="#rules-nomenclature" title="Permalink to this headline">¶</a></h2>
+<p>In this shell game, we have 3 cards, faces down, arranged as Left (L), Middle (M) and Right (R). Their ranks &amp; suits don’t matter but their color do (either Black (B) or Red (R)) <em>(now that it has been put to writing, it is obvious that the cards could be just colored cars! 8P)</em>. The player wins if their pick matches one of the following pairs:</p>
+<ul class="simple">
+<li><p>LM or RM different colors</p></li>
+<li><p>LR same color</p></li>
+</ul>
+<p>So in summary, for the player to win, if one of the picked cards is the middle one, the other’s color (L/R) should be different; and if the middle one is not picked, then the picked cards (L&amp;R) must be of the same color.</p>
+<p>As a twist to the contrary games, in this case we will not be the player but the casino/house. 8)</p>
+<p>So, our conditions for winning are the opposite – we (the house) win when:</p>
+<ul class="simple">
+<li><p>LM or RM same color</p></li>
+<li><p>LR different colors</p></li>
+</ul>
+<p>As there are 3 cards and 2 possibilities for each card, a round will be one of the following <span class="math notranslate nohighlight">\(2^3=8\)</span> cases:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>R</p></th>
+<th class="head"><p>House Wins On</p></th>
+<th class="head"><p>Player Wins On</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>LM,RM</p></td>
+<td><p>LR</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>LR,LM</p></td>
+<td><p>RM</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>—</p></td>
+<td><p>LM,RM,LR</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>LR,RM</p></td>
+<td><p>LM</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>LR,RM</p></td>
+<td><p>LM</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>—</p></td>
+<td><p>LM,RM,LR</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>LR,LM</p></td>
+<td><p>RM</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>LM,RM</p></td>
+<td><p>LR</p></td>
+</tr>
+</tbody>
+</table>
+<p>As the game is set &amp; served by the casino (us), they remove the two 100% lose cases (#3 &amp; #6) so the player is limited to the remaining 6.</p>
+<p>Checking the situation now, it can be seen that, in each case, the casino has a 2/3 chance of winning while the player has only 1/3. To level the playing field, the stakes are fixed such as:</p>
+<ul class="simple">
+<li><p>If the player wins, house pays $2</p></li>
+<li><p>If the house wins, player pays $1</p></li>
+</ul>
+<p>so the game is now fair with respect to expected pay-offs:</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{\$2\times\frac{1}{3}}_{\text{Player's}} = \underbrace{\$1\times\frac{2}{3}}_{\text{Casino's}} = \$0.6\bar6\]</div>
+<section id="simulation-of-a-run-of-games">
+<h3>Simulation of a run of games<a class="headerlink" href="#simulation-of-a-run-of-games" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)(</span><span class="mf">1E5</span><span class="p">)</span>
+
+<span class="n">sets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">],</span>
+                 <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">],</span>
+                 <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">],</span>
+                 <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">],</span>
+                 <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">],</span>
+                 <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">]</span>
+                <span class="p">])</span>
+
+<span class="n">num_player_wins</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1"># house sets the table</span>
+    <span class="n">table_no</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">],</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">],</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">])</span> <span class="o">=</span> <span class="n">sets</span><span class="p">[</span><span class="n">table_no</span><span class="p">]</span>
+    <span class="c1">#print(&quot;{:s} | {:s} | {:s}&quot;.format(table[&quot;L&quot;],table[&quot;M&quot;],table[&quot;R&quot;]))</span>
+    
+    <span class="c1"># player picks two cards at random</span>
+    <span class="p">(</span><span class="n">C1</span><span class="p">,</span><span class="n">C2</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;L&quot;</span><span class="p">,</span><span class="s2">&quot;M&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">],</span><span class="mi">2</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#print(C1,C2)</span>
+    
+    <span class="k">if</span><span class="p">((</span><span class="n">C1</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">C2</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">)):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">C1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">table</span><span class="p">[</span><span class="n">C2</span><span class="p">]):</span>
+            <span class="c1"># Player wins</span>
+            <span class="n">num_player_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1">#print(&quot;Player wins!&quot;)</span>
+        <span class="c1">#else:</span>
+            <span class="c1"># House wins</span>
+            <span class="c1">#print(&quot;House wins!&quot;)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">C1</span><span class="p">]</span> <span class="o">==</span> <span class="n">table</span><span class="p">[</span><span class="n">C2</span><span class="p">]):</span>
+            <span class="c1"># Player wins</span>
+            <span class="n">num_player_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="c1">#print(&quot;Player wins!&quot;)</span>
+        <span class="c1">#else:</span>
+            <span class="c1"># House wins</span>
+            <span class="c1">#print(&quot;House wins!&quot;)</span>
+            
+    <span class="c1">#print(&quot;-&quot;*30)</span>
+
+<span class="n">num_house_wins</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">num_player_wins</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total # of player wins: </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_player_wins</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ratio: </span><span class="si">{:d}</span><span class="s2">/</span><span class="si">{:d}</span><span class="s2"> = </span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_player_wins</span><span class="p">,</span><span class="n">N</span><span class="p">,</span>
+                                         <span class="n">num_player_wins</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player&#39;s average pay-off: $</span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">num_player_wins</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Casino&#39;s average pay-off: $</span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_house_wins</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total # of player wins: 33429
+Ratio: 33429/100000 = 0.33429
+Player&#39;s average pay-off: $0.66858
+Casino&#39;s average pay-off: $0.66571
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-game">
+<h2>The Game<a class="headerlink" href="#the-game" title="Permalink to this headline">¶</a></h2>
+<p>Now, here comes the unusual part: The player can pick any two card they please alas, instead of revealing the cards, the dealer (working for the casino) just announces their color. Naturally, the player can’t trust the dealer, so the casino comes up with this solution and proposes it to the player:</p>
+<p>We will set up the table in two identical rooms and there will be no communication between the dealers of each room (let’s call them Alice and Bob). You will pick one card from room #1 and another from #2. To ensure that the setups are the same, you can call the same card in both rooms: as is ensured, you will observe that they will always be announced as being of the same color. If, for even one time, your call of the same card is returned with different answers from the dealers, that shows that we were cheating and you’ll be paid $1 million (/gazillion dollars, or the universe – you name it).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t forget that Alice and Bob are dealers, not players (and they work for the casino, i.e., us).</p>
+</div>
+</section>
+<section id="measurement">
+<h2>Measurement<a class="headerlink" href="#measurement" title="Permalink to this headline">¶</a></h2>
+<p>Since polarization is nothing but the changing of the basis, <span class="math notranslate nohighlight">\(R_\theta\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_\theta=\begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}\rightarrow\left\{ \begin{array}{l}
+R_{30^o}=\begin{pmatrix}\frac{\sqrt{3}}{{2}}&amp;-\frac{1}{{2}}\\\frac{1}{{2}}&amp;\frac{\sqrt{3}}{{2}}\end{pmatrix}\\
+R_{0}=\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\\
+R_{-30^o}=\begin{pmatrix}\frac{\sqrt{3}}{{2}}&amp;\frac{1}{{2}}\\-\frac{1}{{2}}&amp;\frac{\sqrt{3}}{{2}}\end{pmatrix}
+\end{array}\right.\end{split}\]</div>
+<p>and its effect on kets <span class="math notranslate nohighlight">\(\ket 0\)</span> and <span class="math notranslate nohighlight">\(\ket 1\)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l}
+R_\theta\ket 0 = \begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}=\begin{pmatrix}\cos\theta\\\sin\theta\end{pmatrix}=\cos\theta\ket 0 + \sin\theta\ket 1\\
+R_\theta\ket 1 = \begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}\cos\theta\\-\sin\theta\end{pmatrix}=-\sin\theta\ket 0 + \cos\theta\ket 1
+\end{array}\end{split}\]</div>
+<p>Alice and Bob utilize the following entangled state:</p>
+<div class="math notranslate nohighlight">
+\[\ket{\Psi} = \frac{1}{\sqrt{2}}\left(\ket{00} + \ket{11}\right)\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\ket 0\)</span> state corresponds to calling “red”, and <span class="math notranslate nohighlight">\(\ket 1\)</span> state corresponds to calling “black”.</p>
+<p>We can represent the actions of Alice and Bob on their entangled state <span class="math notranslate nohighlight">\(\ket \Psi\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\left(R_{\theta_A}\otimes R_{\theta_B}\right)\ket \Psi
+=\left(R_{\theta_A}\otimes R_{\theta_B}\right)\left[\frac{1}{\sqrt 2}\left(\ket{00}+\ket{11}\right)\right]\\
+&amp;=\frac{1}{\sqrt 2}\left[\left(R_{\theta_A}\ket{0}\otimes R_{\theta_B}\ket{0}\right)+\left(R_{\theta_A}\ket{1}\otimes R_{\theta_B}\ket{1}\right)\right]\\
+&amp;=\frac{1}{\sqrt 2}\left[\begin{matrix}\left(\cos\theta_A\ket0+\sin\theta_A\ket1\right)\otimes\left(\cos\theta_B\ket0+\sin\theta_B\ket1\right)\\
++\left(-\sin\theta_A\ket0+\cos\theta_A\ket1\right)\otimes\left(-\sin\theta_B\ket0+\cos\theta_B\ket1\right)\end{matrix}\right]\\
+&amp;=\frac{1}{\sqrt 2}\left[\begin{matrix}\left(
+\cos\theta_A\cos\theta_B\ket{00}+\cos\theta_A\sin\theta_B\ket{01}
++\sin\theta_A\cos\theta_B\ket{10}+\sin\theta_A\sin\theta_B\ket{11}
+\right)\\
+\left(
+\sin\theta_A\sin\theta_B\ket{00}-\sin\theta_A\cos\theta_B\ket{01}
+-\cos\theta_A\sin\theta_B\ket{10}+\cos\theta_A\cos\theta_B\ket{11}
+\right)\end{matrix}\right]\\
+&amp;=\frac{1}{\sqrt 2}\left[\begin{matrix}
+ \left(\cos\theta_A\cos\theta_B+\sin\theta_A\sin\theta_B\right)\ket{00}\\
++\left(\cos\theta_A\sin\theta_B-\sin\theta_A\cos\theta_B\right)\ket{01}\\
++\left(\sin\theta_A\cos\theta_B-\cos\theta_A\sin\theta_B\right)\ket{10}\\
++\left(\sin\theta_A\sin\theta_B-\cos\theta_A\cos\theta_B\right)\ket{11}
+\end{matrix}\right]
+=\frac{1}{\sqrt 2}\left[\begin{matrix}
+ \cos(\theta_A-\theta_B)\ket{00}\\
+-\sin(\theta_A-\theta_B)\ket{01}\\
++\sin(\theta_A-\theta_B)\ket{10}\\
++\cos(\theta_A-\theta_B)\ket{11}
+\end{matrix}\right]
+=\frac{1}{\sqrt 2}\left[\begin{matrix}
+ \cos(\Delta)\ket{00}\\
+-\sin(\Delta)\ket{01}\\
++\sin(\Delta)\ket{10}\\
++\cos(\Delta)\ket{11}
+\end{matrix}\right]
+\end{align}
+\end{split}\]</div>
+<p>As can be seen, the probabilities depend on the <strong>difference</strong> of Alice and Bob’s polarization angles <span class="math notranslate nohighlight">\((\Delta = \theta_A - \theta_B)\)</span>. Also, as the probability is the square of the state in question’s coefficent, the sign doesn’t matter so <span class="math notranslate nohighlight">\(\Delta\)</span> will yield the same probability as that of <span class="math notranslate nohighlight">\((-\Delta)\)</span> for the <span class="math notranslate nohighlight">\(\sin\)</span> cases (it has already been taken care of in <span class="math notranslate nohighlight">\(\cos\)</span> cases due to <span class="math notranslate nohighlight">\(\cos\)</span> being an even function ;). Thus for any predefined <span class="math notranslate nohighlight">\(\theta_A\)</span>, <span class="math notranslate nohighlight">\(\theta_B\)</span> and hence <span class="math notranslate nohighlight">\(\Delta\)</span>, the probability of Alice and Bob calling the cards the same color will be <span class="math notranslate nohighlight">\(\cos^2(\Delta)\)</span> and different will be <span class="math notranslate nohighlight">\(\sin^2(\Delta)\)</span>. The probabilities of Alice and Bob observing the <span class="math notranslate nohighlight">\(\ket 0, \ket 1\)</span> states and calling (red if <span class="math notranslate nohighlight">\(\ket 0\)</span> is observed, black if <span class="math notranslate nohighlight">\(\ket 1\)</span>) colors are given as:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Probability</p></th>
+<th class="head"><p>Alice Calls</p></th>
+<th class="head"><p>Bob Calls</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ket{00}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\cos^2(\Delta)\)</span></p></td>
+<td><p>Red</p></td>
+<td><p>Red</p></td>
+<td><p>Same</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\ket{01}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\sin^2(\Delta)\)</span></p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+<td><p>Different</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\ket{10}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\sin^2(\Delta)\)</span></p></td>
+<td><p>Black</p></td>
+<td><p>Red</p></td>
+<td><p>Different</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\ket{11}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tfrac{1}{2}\cos^2(\Delta)\)</span></p></td>
+<td><p>Black</p></td>
+<td><p>Black</p></td>
+<td><p>Same</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-actual-quantum-setup">
+<h2>The “Actual” Quantum Setup<a class="headerlink" href="#the-actual-quantum-setup" title="Permalink to this headline">¶</a></h2>
+<p>Alice and Bob agree on the following strategy beforehand:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dealer</p></th>
+<th class="head"><p>Player Chooses</p></th>
+<th class="head"><p>Set polarization to:</p></th>
+<th class="head"><p>Measure</p></th>
+<th class="head"><p>if 0, call:</p></th>
+<th class="head"><p>if 1, call</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>L</p></td>
+<td><p>+30<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Alice</strong></p></td>
+<td><p>M</p></td>
+<td><p>0</p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>R</p></td>
+<td><p>-30<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-odd"><td><p><hr></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>L</p></td>
+<td><p>+30<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bob</strong></p></td>
+<td><p>M</p></td>
+<td><p>0</p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>R</p></td>
+<td><p>-30<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>If the player picks the same card in both rooms (to check the honesty of the game), as <span class="math notranslate nohighlight">\(\theta_A=\theta_B\rightarrow \Delta=0\)</span>, the probability that they will measure the same value <span class="math notranslate nohighlight">\((\ket{00}\)</span> or <span class="math notranslate nohighlight">\(\ket{11})\)</span> is <span class="math notranslate nohighlight">\(\cos^2(0)=1=100\%\)</span>, so it is guaranteed that Both Alice and Bob will call “Red” (if it is <span class="math notranslate nohighlight">\(\ket{00}\)</span>) or “Black” (if it is <span class="math notranslate nohighlight">\(\ket{11}\)</span>) in unison, dispersing any doubts about cheating.</p></li>
+<li><p>If the player picks the middle card as one of the cards, then <span class="math notranslate nohighlight">\(\Delta=30^o\)</span> and the probability of picking the same colored card will be:</p>
+<div class="math notranslate nohighlight">
+\[\cos^2(30^o) = \left(\frac{\sqrt 3}{2}\right)^2 = \frac{3}{4} = 75\%\quad\text{(House wins)}\]</div>
+<p>and the probability of the picked cards being of different colors will be:</p>
+<div class="math notranslate nohighlight">
+\[\sin^2(30^o) = \left(\frac{1}{2}\right)^2 = \frac{1}{4} = 25\%\quad\text{(Player wins)}\]</div>
+</li>
+<li><p>If the player picks the edge cards (LR), this will result in <span class="math notranslate nohighlight">\(\Delta=60^o\)</span> so the probability of picking the same colored card will be equal to:</p>
+<div class="math notranslate nohighlight">
+\[\cos^2(60^o) = \left(\frac{1}{2}\right)^2 = \frac{1}{4} = 25\%\quad\text{(Player wins)}\]</div>
+<p>whereas the probability of the picked cards being of different colors will be:</p>
+<div class="math notranslate nohighlight">
+\[\sin^2(60^o) = \left(\frac{\sqrt 3}{2}\right)^2 = \frac{3}{4} = 75\%\quad\text{(House wins)}\]</div>
+</li>
+</ul>
+<p>So we see that, instead of the classical edge of <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>, the casino actually benefits from a <span class="math notranslate nohighlight">\(\frac{3}{4}\)</span> chance of winning. The expected pay-offs for the player and the casino, respectively, are now:</p>
+<ul class="simple">
+<li><p>Player: <span class="math notranslate nohighlight">\(\$2\times\frac{1}{4} = \$0.50\)</span></p></li>
+<li><p>Casino: <span class="math notranslate nohighlight">\(\$1\times\frac{3}{4} = \$0.75\)</span></p></li>
+</ul>
+<p>As opposed to the classical one that the player thinks they are in (Casino = Player = $0.66)</p>
+<section id="id1">
+<h3>Simulation of a run of games<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)(</span><span class="mf">1E5</span><span class="p">)</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">num_player_wins</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1"># player picks two cards at random</span>
+    <span class="p">(</span><span class="n">C1</span><span class="p">,</span><span class="n">C2</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;L&quot;</span><span class="p">,</span><span class="s2">&quot;M&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">],</span><span class="mi">2</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1">#print(C1,C2)</span>
+    
+    <span class="n">flag_M</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">if</span><span class="p">((</span><span class="n">C1</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">C2</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">)):</span>
+        <span class="n">Delta</span> <span class="o">=</span> <span class="n">theta</span>
+        <span class="n">flag_M</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Delta</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">theta</span>
+    
+    <span class="n">prob_same</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Delta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">&lt;</span><span class="n">prob_same</span><span class="p">):</span>
+        <span class="n">cond</span> <span class="o">=</span> <span class="s2">&quot;same&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cond</span> <span class="o">=</span> <span class="s2">&quot;different&quot;</span>
+    
+    <span class="k">if</span><span class="p">(((</span><span class="ow">not</span> <span class="n">flag_M</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cond</span> <span class="o">==</span> <span class="s2">&quot;same&quot;</span><span class="p">))</span> <span class="o">|</span> <span class="p">((</span><span class="n">flag_M</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cond</span> <span class="o">==</span> <span class="s2">&quot;different&quot;</span><span class="p">))):</span>
+        <span class="n">num_player_wins</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="n">num_house_wins</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">num_player_wins</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total # of player wins: </span><span class="si">{:d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_player_wins</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ratio: </span><span class="si">{:d}</span><span class="s2">/</span><span class="si">{:d}</span><span class="s2"> = </span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_player_wins</span><span class="p">,</span><span class="n">N</span><span class="p">,</span>
+                                         <span class="n">num_player_wins</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player&#39;s average pay-off: $</span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">num_player_wins</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Casino&#39;s average pay-off: $</span><span class="si">{:.5f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num_house_wins</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total # of player wins: 25177
+Ratio: 25177/100000 = 0.25177
+Player&#39;s average pay-off: $0.50354
+Casino&#39;s average pay-off: $0.74823
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="is-30-sup-o-sup-optimal">
+<h3>Is 30<sup>o</sup> optimal?<a class="headerlink" href="#is-30-sup-o-sup-optimal" title="Permalink to this headline">¶</a></h3>
+<p>Due to the “honesty” checks, when the picked cards in the rooms are the same, they should be called in the same color, meaning that <span class="math notranslate nohighlight">\(\cos^2(\Delta) = 1\)</span>, thus <span class="math notranslate nohighlight">\(\Delta = \theta_A - \theta_B = 0\rightarrow \theta_A=\theta_B\)</span>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Player picks</p></th>
+<th class="head"><p>Prob. Same</p></th>
+<th class="head"><p>Prob. Diff</p></th>
+<th class="head"><p>Player Win Prob.</p></th>
+<th class="head"><p>House Win Prob.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LR</p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos^2(2\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sin^2(2\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos^2(2\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sin^2(2\theta)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>{L,R}M</p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos^2(\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sin^2(\theta)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos^2(\theta)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>We want to find the <span class="math notranslate nohighlight">\(\theta\)</span> value that maximizes the expected pay-off for the house:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{3}\sin^2(2\theta) + \frac{2}{3}\cos^2(\theta)\]</div>
+<p>or, in other terms, the value that minimizes the expected pay-off for the player:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{3}\cos^2(2\theta) + \frac{2}{3}\sin^2(\theta)\]</div>
+<p>(As the player picks two card out of three, there is a 1/3 chance that it will be “L &amp; R” and 2/3 chance that one of the cards will be “M”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">):</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">bounds</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">],</span>
+                          <span class="n">tol</span><span class="o">=</span><span class="mf">1E-12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 0.24999999999999997
+    nfev: 27
+     nit: 18
+ success: True
+       x: 29.999999895933797
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plotting player’s expected pay-off graph reveals two things:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="s2">&quot;b-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Player Win Prob. vs. $\theta$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$ (deg)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Win Probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Quantum_Shell_Game_15_0.png" src="_images/Quantum_Shell_Game_15_0.png" />
+</div>
+</div>
+<p>First of all, we observe that there are 3 extremum points: at <span class="math notranslate nohighlight">\(\theta = 30^o,90^o,150^o\)</span>, so <span class="math notranslate nohighlight">\(30^o\)</span> is indeed an optimal value for the casino.</p>
+<p>More importantly, we see that for <span class="math notranslate nohighlight">\(\theta=90^o\)</span>, we have a maximum at 1! This means that, no matter which cards the player picks, we (the house) can always ensure that they win!</p>
+<p><em>But why would we want that?!..</em> 8)</p>
+</section>
+</section>
+<section id="alternative-rules-strategy">
+<h2>Alternative rules &amp; strategy<a class="headerlink" href="#alternative-rules-strategy" title="Permalink to this headline">¶</a></h2>
+<p>As the casino, we could have alternatively put out a reciprocal set of rules:</p>
+<p>Player wins when:</p>
+<ul class="simple">
+<li><p>LM or RM: same color</p></li>
+<li><p>LR: different colors</p></li>
+</ul>
+<p>Remember the chart of possible games?</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>R</p></th>
+<th class="head"><p>Player Wins On</p></th>
+<th class="head"><p>House Wins On</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>LM,RM</p></td>
+<td><p>LR</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>LR,LM</p></td>
+<td><p>RM</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>—</p></td>
+<td><p>LM,RM,LR</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>LR,RM</p></td>
+<td><p>LM</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>B</p></td>
+<td><p>LR,RM</p></td>
+<td><p>LM</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>R</p></td>
+<td><p>—</p></td>
+<td><p>LM,RM,LR</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>B</p></td>
+<td><p>LR,LM</p></td>
+<td><p>RM</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>R</p></td>
+<td><p>LM,RM</p></td>
+<td><p>LR</p></td>
+</tr>
+</tbody>
+</table>
+<p>Now, imagine that inviting a player to play with these rules, taking out the two cases (3rd and 6th) where we (the casino/house) are guarenteed to win. With this modification, the player’s classical winning chances are 2/3 to our 1/3. We don’t even level the field.</p>
+<p>Here is how we train our croupiers Alice &amp; Bob:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dealer</p></th>
+<th class="head"><p>Player Chooses</p></th>
+<th class="head"><p>Set polarization to:</p></th>
+<th class="head"><p>Measure</p></th>
+<th class="head"><p>if 0, call:</p></th>
+<th class="head"><p>if 1, call</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>L</p></td>
+<td><p>+90<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Alice</strong></p></td>
+<td><p>M</p></td>
+<td><p>0</p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>R</p></td>
+<td><p>-90<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-odd"><td><p><hr></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>L</p></td>
+<td><p>+90<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bob</strong></p></td>
+<td><p>M</p></td>
+<td><p>0</p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>R</p></td>
+<td><p>-90<sup>o</sup></p></td>
+<td><p>→</p></td>
+<td><p>Red</p></td>
+<td><p>Black</p></td>
+</tr>
+</tbody>
+</table>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(R_{\theta_A}\otimes R_{\theta_B}\right)\ket \Psi
+=\frac{1}{\sqrt 2}\left[\begin{matrix}
+ \cos(\Delta)\ket{00}
+-\sin(\Delta)\ket{01}\\
++\sin(\Delta)\ket{10}
++\cos(\Delta)\ket{11}
+\end{matrix}\right]\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\theta_A = \theta_B = 90^o\)</span>, we have:</p>
+<ul>
+<li><p>If the player picks the same card in both rooms (to check the honesty of the game), as <span class="math notranslate nohighlight">\(\theta_A=\theta_B\rightarrow \Delta=0\)</span>, the probability that they will measure the same value <span class="math notranslate nohighlight">\((\ket{00}\)</span> or <span class="math notranslate nohighlight">\(\ket{11})\)</span> is <span class="math notranslate nohighlight">\(\cos^2(0)=1=100\%\)</span>, so it is guaranteed that Alice and Bob will both call “Red” (if it is <span class="math notranslate nohighlight">\(\ket{00}\)</span>) or “Black” (if it is <span class="math notranslate nohighlight">\(\ket{11}\)</span>) in unison, dispersing any doubts about cheating.</p></li>
+<li><p>If the player picks the middle card as one of the cards, then <span class="math notranslate nohighlight">\(\Delta=90^o\)</span> and the probability of picking the same colored card will be:</p>
+<div class="math notranslate nohighlight">
+\[\cos^2(90^o) = 0\quad\text{(Player can never win)}\]</div>
+<p>and the probability of the picked cards being of different colors will be:</p>
+<div class="math notranslate nohighlight">
+\[\sin^2(90^o) = 1 = 100\% \quad\text{(House always wins)}\]</div>
+</li>
+<li><p>If the player picks the edge cards (LR), this will result in <span class="math notranslate nohighlight">\(\Delta=180^o\)</span> so the probability of picking the same colored card will be equal to:</p>
+<div class="math notranslate nohighlight">
+\[\cos^2(180^o) = 1 = 100\% \quad\text{(House always wins)}\]</div>
+<p>whereas the probability of the picked cards being of different colors will be:</p>
+<div class="math notranslate nohighlight">
+\[\sin^2(180^o) = 0 \quad\text{(Player can never win)}\]</div>
+</li>
+</ul>
+<p>So, imagine entering a game where you seemingly have 66.6% chance of winning but instead lose every round!</p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gary Oas, Quantum Mechanics, Pre-Collegiate Institute: Quantum Mechanics, <a class="reference external" href="https://web.stanford.edu/~oas/SI/QM/notes/SIQMWeek3.pdf">Week 3</a>, Stanford University.</p></li>
+</ul>
+</section>
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>A much complex analysis of various “quantum games” is presented in Khesin &amp; Shor’s “Simultaneous Measurement and Entanglement” 2022 article. (<a class="reference external" href="https://arxiv.org/abs/2201.10667">DOI: 10.48550/arXiv.2201.10667</a>)</p>
+<p>I’ve attempted to work out all the intermediate calculations in Khesing &amp; Shor’s paper along with further comments &amp; explanations (<a class="reference external" href="https://www.cryst.ehu.es/Companion_KS/intro.html">my version</a>).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="FIZ302_IstatistikLab_BinomPoisson.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Binom ve Poisson Dağılımları</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="StrainStressTensors.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Stress - Strain Tensors &amp; Elasticity</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emre S. Tasci<br/>
+    
+        &copy; Copyright 2024.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
