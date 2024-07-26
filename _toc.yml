@@ -5,5 +5,7 @@ format: jb-book
 root: intro
 chapters:
 - file: FIZ302_IstatistikLab_BinomPoisson
+- file: Quantum_Shell_Game
+  title: Quantum Shell Game
 - file: StrainStressTensors
   title: Stress-Strain Tensors & Elasticity
