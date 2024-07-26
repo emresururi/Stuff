@@ -5,3 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: FIZ302_IstatistikLab_BinomPoisson
+- file: StrainStressTensors
+  title: Stress-Strain Tensors & Elasticity
