@@ -18,3 +18,8 @@ The most recent version of the [source files](https://github.com/emresururi/Stuf
 # Table of Contents
 * **Binom & Poisson Dağılımları**  
   [FİZ302 - İstatistik Fizik Lab VI "Binom & Poisson Dağılımları" deneyinin simülasyonu](FIZ302_IstatistikLab_BinomPoisson)
+* **[Stress-Strain Tensors & Elasticity](StrainStressTensors)** _(Work in progress)_
+
+```python
+
+```

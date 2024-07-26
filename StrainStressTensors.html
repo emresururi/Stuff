@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Stress - Strain Tensors &amp; Elasticity &#8212; EST&#39;s Stuff...</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Binom ve Poisson Dağılımları" href="FIZ302_IstatistikLab_BinomPoisson.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">EST's Stuff...</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Stuff…
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="FIZ302_IstatistikLab_BinomPoisson.html">
+   Binom ve Poisson Dağılımları
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Stress-Strain Tensors &amp; Elasticity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/StrainStressTensors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/StrainStressTensors.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/emresururi/Stuff/main?urlpath=tree/StrainStressTensors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passive-transformation">
+   Passive transformation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#active-transformation">
+   Active Transformation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tensor-analysis">
+   Tensor Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-transformation-matrix">
+     The transformation matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principal-stresses-axes">
+   Principal stresses &amp; axes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case">
+     Case
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensor-transformation">
+     Tensor transformation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-analysis">
+     Further analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Stress - Strain Tensors & Elasticity</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#passive-transformation">
+   Passive transformation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#active-transformation">
+   Active Transformation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tensor-analysis">
+   Tensor Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-transformation-matrix">
+     The transformation matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principal-stresses-axes">
+   Principal stresses &amp; axes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#case">
+     Case
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution">
+     Solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensor-transformation">
+     Tensor transformation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-analysis">
+     Further analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="stress-strain-tensors-elasticity">
+<h1>Stress - Strain Tensors &amp; Elasticity<a class="headerlink" href="#stress-strain-tensors-elasticity" title="Permalink to this headline">¶</a></h1>
+<p>Dr. Emre S. Tasci, <a class="reference external" href="mailto:emre&#46;tasci&#37;&#52;&#48;hacettepe&#46;edu&#46;tr">emre<span>&#46;</span>tasci<span>&#64;</span>hacettepe<span>&#46;</span>edu<span>&#46;</span>tr</a><br />
+Dept. Eng. Physics<br />
+Hacettepe University<br />
+Ankara / Turkey</p>
+<p>July 2024</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">smp</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="passive-transformation">
+<h2>Passive transformation<a class="headerlink" href="#passive-transformation" title="Permalink to this headline">¶</a></h2>
+<p>In the passive transformation, the point(s) stay fixed while the coordinate system rotates counterclockwise by an angle <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<p><img alt="imgs/StressStrain_PassiveTransformation.png" src="_images/StressStrain_PassiveTransformation.png" /></p>
+<p>The relation between the old and new basis vectors are defined through the transformation matrix <span class="math notranslate nohighlight">\(P_\theta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_\theta = \begin{pmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{pmatrix}\end{split}\]</div>
+<p>as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}\hat x_1'\\\hat x_2'\end{pmatrix} = P_\theta\begin{pmatrix}\hat x_1\\\hat x_2\end{pmatrix}=
+ \begin{pmatrix}\cos\theta&amp;\sin\theta\\-\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}\hat x_1\\\hat x_2\end{pmatrix}=\begin{pmatrix}\cos\theta\hat x_1 + \sin\theta \hat x_2\\-\sin\theta\hat x_1 + \cos\theta \hat x_2\end{pmatrix}\end{split}\]</div>
+<p>and the inverse transformation that relates the old basis to the new ones is of course given as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}\hat x_1\\\hat x_2\end{pmatrix} = P_\theta^{-1}\begin{pmatrix}\hat x_1'\\\hat x_2'\end{pmatrix}=
+ \begin{pmatrix}\cos\theta&amp;-\sin\theta\\\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}\hat x_1'\\\hat x_2'\end{pmatrix}=\begin{pmatrix}\cos\theta\hat x_1' - \sin\theta \hat x_2'\\\sin\theta\hat x_1' + \cos\theta \hat x_2'\end{pmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">cos</span><span class="p">,</span><span class="n">sin</span><span class="p">],[</span><span class="o">-</span><span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">]])</span>
+<span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.8660254,  0.5      ],
+       [-0.5      ,  0.8660254]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x1p</span><span class="p">,</span><span class="n">x2p</span><span class="p">)</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">symbols</span><span class="p">([</span><span class="s2">&quot;\hat</span><span class="si">{x}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;\hat</span><span class="si">{x}</span><span class="s2">_</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;\hat</span><span class="si">{x}</span><span class="s2">_</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+                               <span class="s2">&quot;\hat</span><span class="si">{x}</span><span class="s2">_</span><span class="si">{2}</span><span class="s2">&#39;&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Array</span><span class="p">([[</span><span class="n">x1</span><span class="p">],[</span><span class="n">x2</span><span class="p">]])</span>
+<span class="n">xp</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Array</span><span class="p">([[</span><span class="n">x1p</span><span class="p">],[</span><span class="n">x2p</span><span class="p">]])</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\theta&quot;</span><span class="p">)</span>
+<span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \theta\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Array</span><span class="p">([[</span><span class="n">smp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="n">smp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+               <span class="p">[</span><span class="o">-</span><span class="n">smp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="n">smp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+<span class="n">Pi</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Array</span><span class="p">([[</span><span class="n">smp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="o">-</span><span class="n">smp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                <span class="p">[</span><span class="n">smp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span><span class="n">smp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+<span class="n">P</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}\cos{\left(\theta \right)} &amp; \sin{\left(\theta \right)}\\- \sin{\left(\theta \right)} &amp; \cos{\left(\theta \right)}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<p>Consider a point A, defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A=\begin{pmatrix}3\\4\end{pmatrix}_{\hat x_1,\hat x_2} = 3\hat x_1 + 4 \hat x_2\end{split}\]</div>
+<p>From the above transformation, we see that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{matrix}\hat x_1 = \cos\theta \hat x_1'-\sin\theta \hat x_2'\\
+\hat x_2 = \sin\theta \hat x_1'+\cos\theta \hat x_2'\end{matrix}\end{split}\]</div>
+<p>Substitution of the new basis in place of the old ones, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}A &amp;= 3\left( \cos\theta \hat x_1'-\sin\theta \hat x_2'\right)+4\left(\sin\theta \hat x_1'+\cos\theta \hat x_2'\right)\\
+&amp;=\left(3\cos\theta+4\sin\theta\right)\hat x_1' + \left(-3\sin\theta+4\cos\theta \right)\hat x_2'\\
+&amp;=\begin{pmatrix}3\cos\theta+4\sin\theta\\-3\sin\theta+4\cos\theta\end{pmatrix}_{\hat x_1',\hat x_2'}
+\end{align}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ap</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Array</span><span class="p">([[</span><span class="mi">3</span><span class="o">*</span><span class="n">smp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">smp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+                <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">smp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">smp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+<span class="n">Ap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}4 \sin{\left(\theta \right)} + 3 \cos{\left(\theta \right)}\\- 3 \sin{\left(\theta \right)} + 4 \cos{\left(\theta \right)}\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ap_subs</span> <span class="o">=</span> <span class="n">Ap</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">Ap_subs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}4.59807621135332\\1.96410161513776\end{matrix}\right]\end{split}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ap_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Ap_subs</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">Ap_np</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.59807621],
+       [1.96410162]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[A = 3\hat x_1 + 4 \hat x_2 = \left(3\cos\theta+4\sin\theta\right)\hat x_1' + \left(-3\sin\theta+4\cos\theta \right)\hat x_2'\]</div>
+<p>or, in other words:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A = \begin{pmatrix}3\\4\end{pmatrix}_{\hat x_1,\hat x_2} = \begin{pmatrix}3\cos\theta+4\sin\theta\\-3\sin\theta+4\cos\theta\end{pmatrix}_{\hat x_1',\hat x_2'}\end{split}\]</div>
+</section>
+<section id="active-transformation">
+<h2>Active Transformation<a class="headerlink" href="#active-transformation" title="Permalink to this headline">¶</a></h2>
+<p><img alt="imgs/StressStrain_ActiveTransformation.png" src="_images/StressStrain_ActiveTransformation.png" /></p>
+<p>We could have perceived the same action by <em>rotating</em> the point in question in the opposite direction towards the coordinate axis. In our example, this is equivalent to rotating the point 30<sup>o</sup> in the clockwise direction instead of rotating the coordinate system 30<sup>o</sup> along the counter-clockwise direction.</p>
+<p>Since the rotation operator <span class="math notranslate nohighlight">\(R_\theta\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_\theta = \begin{pmatrix}\cos\theta &amp;-\sin\theta\\\sin\theta &amp; \cos\theta\end{pmatrix}\end{split}\]</div>
+<p>and our rotation direction is along the clockwise, i.e., the negative direction, we’ll have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}R_\theta = \begin{pmatrix}\cos(-\theta) &amp;-\sin(-\theta)\\\sin(-\theta) &amp; \cos(-\theta)\end{pmatrix}
+=\begin{pmatrix}\cos\theta &amp;\sin\theta\\-\sin\theta &amp; \cos\theta\end{pmatrix}\end{split}\]</div>
+<p>As <span class="math notranslate nohighlight">\(\cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> are even and odd functions, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">cos</span><span class="p">,</span><span class="n">sin</span><span class="p">],[</span><span class="o">-</span><span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">]])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.59807621],
+       [1.96410162]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tensor-analysis">
+<h2>Tensor Analysis<a class="headerlink" href="#tensor-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Tensors transform according to a very strict formula. In our case, we are dealing with vectors (i.e., tensors of 1st rank) and they transform via the following equation:</p>
+<div class="math notranslate nohighlight">
+\[\hat x_i' = a_{ij}\hat x_j\]</div>
+<p>here, Einstein notation is followed and <span class="math notranslate nohighlight">\(a_{ij}\)</span> is the cosine of the angle between the new base <span class="math notranslate nohighlight">\(\hat x_i'\)</span> and the old one <span class="math notranslate nohighlight">\(\hat x_j\)</span> (as usual, counter-clockwise being the positive direction and clockwise being the negative direction).</p>
+<p>Considering our transformation:</p>
+<p><img alt="imgs/StressStrain_PassiveTransformation.png" src="_images/StressStrain_PassiveTransformation.png" /></p>
+<p>let’s calculate the new basis in terms of the old ones. Writing the above equation in full form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\hat x_1' &amp;= a_{11}\hat x_1 + a_{12}\hat x_2\\
+\hat x_2' &amp;= a_{21}\hat x_1 + a_{22}\hat x_2
+\end{align}\end{split}\]</div>
+<p>From the graph, we see that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{}
+a_{11} = \cos(\angle{\hat x_1' \hat x_1}) = \cos(-\theta)=\cos\theta\\
+a_{12} = \cos(\angle{\hat x_1' \hat x_2}) = \cos(\frac{\pi}{2}-\theta) = \sin\theta\\
+a_{21} = \cos(\angle{\hat x_2' \hat x_1}) = \cos(-(\frac{\pi}{2}+\theta)) = -\sin\theta\\
+a_{22} = \cos(\angle{\hat x_2' \hat x_2}) = \cos(-\theta) = \cos\theta
+\end{array}\end{split}\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Check that, the angle is always calculated starting from the new basis and going towards the old one - that’s why, when we’re moving in clockwise direction, the angle is taken to be negative.</p>
+</div>
+<p>It is also obvious but still worth to mention: in general <span class="math notranslate nohighlight">\(a_{ij}\ne a_{ji}\)</span>.</p>
+<p>Also, a transformation doesn’t necessarily need to correspond to a simple rotation of the basis like the one we are considering. We could have two different angles between the corresponding new and old basis.</p>
+<p>Substitution of the <span class="math notranslate nohighlight">\(a\)</span> values into the equation above, we find:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\hat x_1' &amp;= a_{11}\hat x_1 + a_{12}\hat x_2 = \cos\theta\hat x_1 + \sin\theta\hat x_2\\
+\hat x_2' &amp;= a_{21}\hat x_1 + a_{22}\hat x_2 = -\sin\theta\hat x_1 + \cos\theta\hat x_2
+\end{align}\end{split}\]</div>
+<p>or in other “words”:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}\hat x_1'\\\hat x_2'\end{pmatrix} = \begin{pmatrix}\cos\theta&amp;\sin\theta\\
+-\sin\theta&amp;\cos\theta\end{pmatrix}\begin{pmatrix}\hat x_1\\\hat x_2\end{pmatrix}\end{split}\]</div>
+<p>as expected.</p>
+<section id="the-transformation-matrix">
+<h3>The transformation matrix<a class="headerlink" href="#the-transformation-matrix" title="Permalink to this headline">¶</a></h3>
+<p>As we have seen, the transformation matrix <span class="math notranslate nohighlight">\(P\)</span> composes of the cosines relating the new axes to the old ones:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P=\left[\begin{matrix}a_{11} &amp; a_{12} &amp; a_{13}\\a_{21} &amp; a_{22} &amp; a_{23}\\a_{31} &amp; a_{32} &amp; a_{33}\end{matrix}\right]\end{split}\]</div>
+<p>Vectors and tensors transform in accordance with the following transformation formulas:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v_{i}' = a_{ij} v_{j}\\
+T_{ij}' = a_{ik}a_{jl}T_{kl}\end{split}\]</div>
+<p>[Nye1985 I.2 “Transformations”]</p>
+<p>Here, the Einstein summation notation has been used, so, for example, <span class="math notranslate nohighlight">\(\vec v'\)</span> and <span class="math notranslate nohighlight">\(T_{12}'\)</span> are calculated as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v'=\begin{bmatrix}x'\\y'\\z'\end{bmatrix}=\begin{bmatrix}a_{11} x + a_{12} y + a_{13} z\\a_{21} x + a_{22} y + a_{23} z\\a_{31} x + a_{32} y + a_{33} z\end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}T_{12}' &amp;= a_{11}a_{21}T_{11}+a_{11}a_{22}T_{12}+a_{11}a_{23}T_{13}\\
+&amp;+a_{12}a_{21}T_{21}+a_{12}a_{22}T_{22}+a_{12}a_{23}T_{23}\\
+&amp;+a_{13}a_{21}T_{31}+a_{13}a_{22}T_{32}+a_{13}a_{23}T_{33}\end{align}\end{split}\]</div>
+</section>
+</section>
+<section id="principal-stresses-axes">
+<h2>Principal stresses &amp; axes<a class="headerlink" href="#principal-stresses-axes" title="Permalink to this headline">¶</a></h2>
+<section id="case">
+<h3>Case<a class="headerlink" href="#case" title="Permalink to this headline">¶</a></h3>
+<p>Calculate the principal stresses and their directions for the given stress tensor <span class="math notranslate nohighlight">\(\sigma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sigma = \begin{bmatrix}
+5&amp;-7&amp;3\\
+-7&amp;9&amp;-4\\
+3&amp;-4&amp;-6\end{bmatrix}\end{split}\]</div>
+</section>
+<section id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
+<p>Normally this is pretty straightforward as the eigenvalues yield the principal stresses and the eigenvectors their direction, so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
+<span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">sigma</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="n">sigma</span> <span class="o">+=</span> <span class="n">sigma</span><span class="o">.</span><span class="n">T</span> 
+<span class="n">sigma</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">sigma</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 5., -7.,  3.],
+       [-7.,  9., -4.],
+       [ 3., -4., -6.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">l</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">l</span><span class="p">,</span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([15.44582956, -0.28008452, -7.16574504]),
+ array([[ 0.58630892, -0.79872908, -0.1351803 ],
+        [-0.77761665, -0.601688  ,  0.18243874],
+        [ 0.22705549,  0.00184701,  0.97388007]]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus, the principal stresses <span class="math notranslate nohighlight">\((\sigma_i)\)</span> and their corresponding axes’ directions <span class="math notranslate nohighlight">\((\vec a_i)\)</span> (wrt the “original” basis) are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boxed{\begin{align}\sigma_I &amp;= 15.446&amp;\leftrightarrow&amp; &amp;\vec a_I &amp;= \begin{bmatrix}0.586\\-0.799\\-0.135\end{bmatrix}\\
+\sigma_{II} &amp;= -0.280&amp;\leftrightarrow&amp; &amp;\vec a_{II} &amp;= \begin{bmatrix}-0.778\\-0.602\\0.182\end{bmatrix}\\
+\sigma_{III} &amp;= -7.166&amp;\leftrightarrow&amp; &amp;\vec a_{III} &amp;= \begin{bmatrix}0.228\\0.002\\0.974\end{bmatrix}\end{align}}\end{split}\]</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Notice that even though the eigenvectors are the columns of the <em>u</em> matrix, for the principal axes’ directions we are reading by the rows. This is due the fact that <span class="math notranslate nohighlight">\(\sigma = u.\sigma'.u^{-1}\)</span> whereas we are interested in the transformation that transforms <span class="math notranslate nohighlight">\(\sigma\)</span> to <span class="math notranslate nohighlight">\(\sigma'\)</span>, which is given by the reciprocal equation: <span class="math notranslate nohighlight">\(\sigma' = u^{-1}.\sigma.u\)</span>. As <span class="math notranslate nohighlight">\(u\)</span> is an orthogonal matrix, its inverse is just its transpose.</p>
+</div>
+<p><span class="math notranslate nohighlight">\(\sigma'\)</span> is the diagonalized form of <span class="math notranslate nohighlight">\(\sigma\)</span>, meaning that, when the axes are oriented as such, there is only pure stress along those directions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">sigma_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[15.44582956,  0.        ,  0.        ],
+       [ 0.        , -0.28008452,  0.        ],
+       [ 0.        ,  0.        , -7.16574504]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, basically, we have thus transformed our stress tensor into the diagonalized form via:</p>
+<div class="math notranslate nohighlight">
+\[\sigma = u.\sigma'.u^{-1}\]</div>
+<p>or in other words:</p>
+<div class="math notranslate nohighlight">
+\[\sigma' = u^{-1}.\sigma.u\]</div>
+<p><em>(As <span class="math notranslate nohighlight">\(u\)</span> is an orthogonal matrix, its inverse is equal to its transpose.)</em></p>
+</section>
+<section id="tensor-transformation">
+<h3>Tensor transformation<a class="headerlink" href="#tensor-transformation" title="Permalink to this headline">¶</a></h3>
+<p>As the <span class="math notranslate nohighlight">\(\sigma\)</span> tensor transforms according to:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_{ij}' = a_{ik}a_{jm}\sigma_{km}\]</div>
+<p>and from the relations above, we see that <span class="math notranslate nohighlight">\(a = u^{-1} = u^T\)</span>.</p>
+<p>We can confirm this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">T</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                    <span class="n">sigma_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">m</span><span class="p">]</span><span class="o">*</span><span class="n">sigma</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma_p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># Setting the &quot;almost-zero&quot; values (due to numerical calculations)</span>
+<span class="c1"># i.e., the off-diagonal elements, to zero, for clarity:</span>
+<span class="n">sigma_p</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">sigma_p</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.54458296e+01 -9.90527105e-16  8.88178420e-16]
+ [-3.81639165e-17 -2.80084518e-01  1.57859836e-16]
+ [ 8.88178420e-16  1.50920942e-16 -7.16574504e+00]]
+
+[[15.44582956  0.          0.        ]
+ [ 0.         -0.28008452  0.        ]
+ [ 0.          0.         -7.16574504]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could have obtained our diagonalized stress tensor via the <span class="math notranslate nohighlight">\(\sigma' = u^{-1}.\sigma.u\)</span> transformation equation as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma_p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">multi_dot</span><span class="p">((</span><span class="n">u</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma_p2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">sigma_p2</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">sigma_p2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma_p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.54458296e+01 -1.15440341e-15  6.88418459e-16]
+ [-5.45688951e-16 -2.80084518e-01  9.21363052e-17]
+ [ 3.36731558e-16  6.34175583e-17 -7.16574504e+00]]
+
+[[15.44582956  0.          0.        ]
+ [ 0.         -0.28008452  0.        ]
+ [ 0.          0.         -7.16574504]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="further-analysis">
+<h3>Further analysis<a class="headerlink" href="#further-analysis" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\sigma\)</span> being the stress tensor, the following invariants <em>(as the name suggests, duh!)</em> must be the same in any coordinate system:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+I_1 &amp;= \sigma_{11}+\sigma_{22}+\sigma_{33} = \sigma_{kk}\\
+I_2 &amp;= \sigma_{11}\sigma_{22}+\sigma_{11}\sigma_{33}
++\sigma_{22}\sigma_{33}-\sigma_{12}^2-\sigma_{23}^2-\sigma_{13}^2
+=\frac{1}{2}\left(\sigma_{ii}\sigma_{jj}-\sigma_{ij}\sigma_{ij}\right)\\
+I_3 &amp;= \det\sigma=\frac{1}{3}\sigma_{ij}\sigma_{jk}\sigma_{ki}
+\end{align}\end{split}\]</div>
+<p>and the principal stresses can be found as the roots of the characteristic equation:</p>
+<div class="math notranslate nohighlight">
+\[f(\sigma_p) = \sigma_p^3-I_1\sigma_p^2+I_2\sigma_p-I_3\]</div>
+<p><a class="reference external" href="https://web.mit.edu/course/3/3.11/www/modules/trans.pdf">[Roylance2001]</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">CalcInvariants</span><span class="p">(</span><span class="n">sigma</span><span class="p">):</span>
+    <span class="n">I1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+    <span class="n">I2</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sigma</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>\
+         <span class="o">+</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sigma</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>\
+         <span class="o">+</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">sigma</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>\
+         <span class="o">-</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>\
+         <span class="o">-</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>\
+         <span class="o">-</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="c1"># Alternative calculation of I2</span>
+    <span class="c1"># through the Einstein summation</span>
+    <span class="c1">#I2_p1 = I2_p2 = 0</span>
+    <span class="c1">#for i in range(3):</span>
+    <span class="c1">#    for j in range(3):</span>
+    <span class="c1">#        I2_p1 += sigma[i,i]*sigma[j,j]</span>
+    <span class="c1">#        I2_p2 += sigma[i,j]**2</span>
+    <span class="c1">#I2 = 0.5*(I2_p1 - I2_p2)</span>
+    
+    <span class="n">I3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">((</span><span class="n">I1</span><span class="p">,</span><span class="n">I2</span><span class="p">,</span><span class="n">I3</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Invariants from our original <span class="math notranslate nohighlight">\(\sigma\)</span>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CalcInvariants</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   8., -113.,   31.])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Invariants from our diagonalized <span class="math notranslate nohighlight">\(\sigma'\)</span>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CalcInvariants</span><span class="p">(</span><span class="n">sigma_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   8., -113.,   31.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding the roots of the characteristic equation once again yields the principal stresses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">I1</span><span class="p">,</span><span class="n">I2</span><span class="p">,</span><span class="n">I3</span><span class="p">)</span> <span class="o">=</span> <span class="n">CalcInvariants</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="n">I1</span><span class="p">,</span><span class="n">I2</span><span class="p">,</span><span class="o">-</span><span class="n">I3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([15.44582956, -7.16574504, -0.28008452])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the principal axes’ directions <em>-if we ever forgot that they are derived from the eigenvectors of the <span class="math notranslate nohighlight">\(\sigma\)</span>-</em> we can use the following equations (not surprisingly) derived from:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}\sigma .\vec u_i &amp;= \sigma_i. \sigma\\
+\begin{bmatrix}\sigma_{11} &amp; \sigma_{12} &amp; \sigma_{13} \\
+\sigma_{21} &amp; \sigma_{22} &amp; \sigma_{23} \\
+\sigma_{31} &amp; \sigma_{32} &amp; \sigma_{33} \end{bmatrix} 
+\underbrace{\begin{bmatrix}u_{1i}\\ u_{2i}\\ u_{3i}\end{bmatrix}}_{\vec u_i} &amp;= \sigma_i \begin{bmatrix}u_{1i}\\ u_{2i}\\ u_{3i}\end{bmatrix}\end{align}\end{split}\]</div>
+<p>This translates to:</p>
+<div class="math notranslate nohighlight">
+\[(\sigma - \sigma_i \mathbb{1}) = \mathbb{0}\]</div>
+<p>and from here we can derive the first two following equations (with the third from derived from the normalization condition):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather}(\sigma_{11}u_{1i}-\sigma_i)+\sigma_{12}u_{2i}+\sigma_{13}u_{3i} = 0\\
+\sigma_{21}u_{1i}+(\sigma_{22}-\sigma_i)u_{2i}+\sigma_{23}u_{3i} = 0\\
+u_{1i}^2 + u_{2i}^2 +u_{3i}^2 = 1
+\end{gather}\end{split}\]</div>
+<p><a class="reference external" href="https://web.mit.edu/16.unified/www/FALL/materials/Lectures/M2.4-Unified08.pdf">[Lagace2008]</a></p>
+<p>Implemented code follows (we’re using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fsolve.html"><code class="docutils literal notranslate"><span class="pre">fsolve</span></code></a> to solve the non-linear equations set):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eqns</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">S_i</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">u_i1</span><span class="p">,</span><span class="n">u_i2</span><span class="p">,</span><span class="n">u_i3</span><span class="p">)</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="n">eqn1</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">S_i</span><span class="p">)</span><span class="o">*</span><span class="n">u_i1</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">u_i2</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">u_i3</span>
+    <span class="n">eqn2</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">u_i1</span> <span class="o">+</span> <span class="p">(</span><span class="n">sigma</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">S_i</span><span class="p">)</span><span class="o">*</span><span class="n">u_i2</span> <span class="o">+</span> <span class="n">sigma</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">u_i3</span>
+    <span class="n">eqn3</span> <span class="o">=</span> <span class="n">u_i1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">u_i2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">u_i3</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="c1">#eqn4 = sigma[0,2]*u_i1 + sigma[1,2]*u_i2 + (sigma[2,2] - S_i)*u_i3</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">eqn1</span><span class="p">,</span><span class="n">eqn2</span><span class="p">,</span><span class="n">eqn3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we already have the principle stresses</span>
+<span class="c1"># (either from the eigenvalues or </span>
+<span class="c1"># from the roots of the characteristics equation)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Principle Stresses:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-=&quot;</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Principle Axes (read in columns):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">SS_i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="n">psol</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">eqns</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">args</span><span class="o">=</span><span class="n">SS_i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">psol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Principle Stresses:
+[15.44582956 -0.28008452 -7.16574504]
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Principle Axes (read in columns):
+[-0.58630892  0.77761665 -0.22705549]
+[ 0.79872908  0.601688   -0.00184701]
+[-0.1351803   0.18243874  0.97388007]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above output, the <span class="math notranslate nohighlight">\(u_i\)</span> are presented in rows, hence, by printing them line after line, the <span class="math notranslate nohighlight">\(a_i\)</span> directions present themselves in columns ;)</p>
+</div>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Lagace2008</strong>: Paul A. Lagace, “Stress and Strain Transformations”, <a class="reference external" href="https://web.mit.edu/16.unified/www/FALL/materials/index.html">Materials and Structures Course</a> (2.4) MIT OCW <a class="reference external" href="https://web.mit.edu/16.unified/www/FALL/materials/Lectures/M2.4-Unified08.pdf">link</a></p></li>
+<li><p><strong>Nye1985</strong>: Nye, John Frederick. <em>Physical properties of crystals: their representation by tensors and matrices.</em> Oxford university press, 1985.</p></li>
+<li><p><strong>Roylance2001</strong>: David Roylance, “Transformation of Stresses and Strains”, <a class="reference external" href="https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/pages/modules/">Mechanics of Materials Course</a> (3.11) MIT OCW <a class="reference external" href="https://web.mit.edu/course/3/3.11/www/modules/trans.pdf">link</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="FIZ302_IstatistikLab_BinomPoisson.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Binom ve Poisson Dağılımları</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Emre S. Tasci<br/>
+    
+        &copy; Copyright 2024.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
